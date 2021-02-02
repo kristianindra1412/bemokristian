@@ -1,0 +1,88 @@
+$bgcolor1: #DDDDDD;
+$textcolor1: #000000;
+$bordercolor1: #000000;
+
+$bgcolor2: #222222;
+$textcolor2: #DDDDDD;
+$bordercolor1: #555555;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+main {
+	padding: 20px;
+	display: flex;
+}
+
+.column {
+	background-color: $bgcolor1;
+	width: 300px;
+	padding: 5px;
+	border: 2px solid $bordercolor1;
+	border-radius: 10px;
+	box-shadow: -5px 5px #AAAAAA;
+	margin-left: 20px;
+	&:first-child {
+		margin-left: 0px;
+	}
+	&__title {
+		font-family: Helvetica;
+		color: $textcolor1;
+		text-align: center;
+		font-size: 24pt;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	&__container-card {
+	}
+}
+
+.card {
+	font-family: Arial;
+	background-color: $bgcolor2;
+	width: 100%;
+	padding: 5px;
+	border: 1px solid $bordercolor1;
+	border-radius: 5px;
+	text-align: center;
+	font-weight: normal;
+	text-transform: none;
+	margin-top: 10px;
+	&__title {
+		color: $textcolor2;
+		text-align: center;
+		font-size: 16pt;
+	}
+	&__desc {
+		color: $textcolor2;
+		text-align: left;
+		font-size: 12pt;
+	}
+	&__control {
+		color: white;
+		display: flex;
+		justify-content: space-around;		
+		margin-top: 10px;
+		padding-top: 10px;
+		border-top: 1px solid white;
+		&-item {
+			border: 1px solid white;
+			text-align: center;
+			padding: 5px 10px;
+			transition: all 0.5s;
+			&:hover {
+				cursor: pointer;
+				background-color: $textcolor2;
+				color: $bgcolor2;
+				transition: all 0.5s;
+			}
+		}
+		
+	}
+}
