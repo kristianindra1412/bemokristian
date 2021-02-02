@@ -1,8 +1,8 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ColumnController;
+use App\Http\Controllers\CardController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('card')->group(function () {
+    Route::get('/', 'App\Http\Controllers\CardController@index');
+    Route::get('/fetch', 'App\Http\Controllers\CardController@fetch');
+    Route::post('/ins', 'App\Http\Controllers\CardController@ins');
+    Route::put('/upd/{id}', 'App\Http\Controllers\CardController@upd');
+    Route::delete('/del/{id}', 'App\Http\Controllers\CardController@del');
+});
+
+Route::prefix('column')->group(function () {
+    Route::get('/', 'App\Http\Controllers\ColumnController@index');
+    Route::get('/fetch', 'App\Http\Controllers\ColumnController@fetch');
+    Route::post('/ins', 'App\Http\Controllers\ColumnController@ins');
+    Route::put('/upd/{id}', 'App\Http\Controllers\ColumnController@upd');
+    Route::delete('/del/{id}', 'App\Http\Controllers\ColumnController@del');
 });
