@@ -19,7 +19,6 @@ class CreateTableCard extends Migration
 			$table->string('card_title');
 			$table->text('card_description');
 			$table->integer('card_position');
-			$table->boolean('isactive')->default(1);
             $table->timestamps();
         });
     }

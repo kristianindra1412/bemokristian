@@ -17,7 +17,6 @@ class CreateTableColumn extends Migration
             $table->id();
 			$table->string('column_title');
 			$table->integer('column_position');
-			$table->boolean('isactive')->default(1);
             $table->timestamps();
         });
     }
